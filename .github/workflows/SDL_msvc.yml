@@ -58,8 +58,8 @@ jobs:
         echo "SDL2_DIR=$Env:GITHUB_WORKSPACE/prefix" >> $Env:GITHUB_ENV
         cmake --install build/
     
-    - name: List Files In Workspace/build Folder
-      run: tree ${{ github.workspace }}/build
+    - name: Show Tree In Workspace Folder
+      run: tree ${{ github.workspace }}
 
     - name: Verify CMake configuration files
       if: ${{ !contains(matrix.platform.name, 'UWP') }}  # FIXME: cmake/test/CMakeLists.txt should support UWP
