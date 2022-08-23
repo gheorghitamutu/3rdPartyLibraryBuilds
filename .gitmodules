@@ -1,0 +1,9 @@
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/libsdl-org/SDL
+[submodule "openssl"]
+	path = openssl
+	url = https://github.com/openssl/openssl
+[submodule "ncurses"]
+	path = ncurses
+	url = https://github.com/mirror/ncurses
