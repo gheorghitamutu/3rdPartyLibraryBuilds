@@ -26,12 +26,16 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
+
+    - name: Echo Workspace
+      run: echo ${{ github.workspace }}"
+
     - name: Create CMake project using SDL as a subproject
       shell: python
       run: |
         import os
         import textwrap
-        srcdir = r"${{ github.workspace }}/SDL".replace("\\", "/")
+        srcdir = r"${{ github.workspace }}".replace("\\", "/")
         builddir = f"{ srcdir }/build"
         os.makedirs(builddir)
         with open(f"{ builddir }/CMakeLists.txt", "w") as f:
