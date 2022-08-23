@@ -34,6 +34,7 @@ jobs:
         srcdir = r"${{ github.workspace }}".replace("\\", "/")
         builddir = f"{ srcdir }/build"
         os.makedirs(builddir)
+        print(srcdir)
     #     with open(f"{ builddir }/CMakeLists.txt", "w") as f:
     #       f.write(textwrap.dedent(f"""\
     #         cmake_minimum_required(VERSION 3.0)
