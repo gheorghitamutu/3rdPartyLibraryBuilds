@@ -30,6 +30,9 @@ jobs:
     - name: Echo Workspace
       run: echo ${{ github.workspace }}
 
+    - name: List Files In Workspace
+      run: dir ${{ github.workspace }}
+
     - name: Create CMake project using SDL as a subproject
       shell: python
       run: |
