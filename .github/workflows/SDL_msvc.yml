@@ -31,16 +31,15 @@ jobs:
       run: |
         import os
         import textwrap
-        srcdir = r"${{ github.workspace }}".replace("\\", "/")
+        srcdir = r"${{ github.workspace }}/SDL".replace("\\", "/")
         builddir = f"{ srcdir }/build"
         os.makedirs(builddir)
-        print(srcdir)
-    #     with open(f"{ builddir }/CMakeLists.txt", "w") as f:
-    #       f.write(textwrap.dedent(f"""\
-    #         cmake_minimum_required(VERSION 3.0)
-    #         project(sdl_user)
-    #         add_subdirectory("{ srcdir }" SDL)
-    #       """))
+        with open(f"{ builddir }/CMakeLists.txt", "w") as f:
+          f.write(textwrap.dedent(f"""\
+            cmake_minimum_required(VERSION 3.0)
+            project(sdl_user)
+            add_subdirectory("{ srcdir }" SDL)
+          """))
     - name: Configure (CMake)
       run: cmake -S build -B build `
         -DSDL_TESTS=ON `
