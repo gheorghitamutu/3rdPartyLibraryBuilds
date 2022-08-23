@@ -75,4 +75,4 @@ jobs:
       
     - name: Build msbuild
       if: ${{ matrix.platform.project != '' }}
-      run: msbuild build/${{ matrix.platform.project }} /m /p:BuildInParallel=true /p:Configuration=Release ${{ matrix.platform.projectflags }}
+      run: msbuild SDL/${{ matrix.platform.project }} /m /p:BuildInParallel=true /p:Configuration=Release ${{ matrix.platform.projectflags }}
