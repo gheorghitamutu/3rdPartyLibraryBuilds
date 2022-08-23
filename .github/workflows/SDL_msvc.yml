@@ -40,7 +40,7 @@ jobs:
         os.makedirs(builddir)
 
     - name: Configure (CMake)
-      run: cmake -S build -B build `
+      run: cmake -S . -B build `
         -DSDL_TESTS=ON `
         -DSDL_INSTALL_TESTS=ON `
         -DSDL2_DISABLE_INSTALL=OFF `
